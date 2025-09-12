@@ -1,15 +1,10 @@
 import "dotenv/config";
 import twilio from "twilio";
 
-if (
-  !process.env.ACCOUNT_SID ||
-  !process.env.AUTH_TOKEN ||
-  !process.env.FROM_NUMBER ||
-  !process.env.TO_NUMBER
-) {
-  console.error("❌ Missing required environment variables in .env");
-  process.exit(1);
-}
+const ACCOUNT_SID = process.env.ACCOUNT_SID;
+const AUTH_TOKEN = process.env.AUTH_TOKEN;
+const FROM_NUMBER = process.env.FROM_NUMBER;
+const TO_NUMBER = process.env.TO_NUMBER;
 
 const client = twilio(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN);
 console.log("Hello");
