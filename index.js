@@ -10,23 +10,11 @@ const client = twilio(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN);
 console.log("Hello");
 
 const workoutPlan = {
-  Monday: {
-    title: "Legs & Abs – Quads, Hamstrings, Calves",
-    exercises: [
-      ["Barbell Squats", "Quads focus (4x6-8)"],
-      ["Seated Leg Curls", "Hamstrings isolation (3x12-15)"],
-      ["Bulgarian Split Squats", "Glutes, quads, hamstrings (3x10-12 per leg)"],
-      ["Leg Extensions", "Quads isolation (3x12-15)"],
-      ["Seated Calf Raises", "Soleus (4x15-20)"],
-      ["Cable Side Crunches", "Obliques (3x12-15 per side)"],
-      ["Ab Rollouts (Ab Wheel)", "Core (3x10-12)"],
-    ],
-  },
-  Tuesday: {
-    title: "Rest (Fasting Day)",
+ Sunday: {
+    title: "Rest 😴😪🥱💤🛌🏼",
     exercises: [],
   },
-  Wednesday: {
+  Monday: {
     title: "Push – Chest, Shoulders, Triceps",
     exercises: [
       ["Flat Barbell Bench Press", "Mid-chest (4x4-6)"],
@@ -39,7 +27,7 @@ const workoutPlan = {
       ["Tricep Pushdowns (Rope or Bar)", "Triceps isolation (3x10-12)"],
     ],
   },
-  Thursday: {
+  Tuesday: {
     title: "Pull – Back, Traps, Biceps",
     exercises: [
       ["Deadlifts", "Lower back, glutes, and traps (4x4-6)"],
@@ -53,7 +41,7 @@ const workoutPlan = {
       ["Hammer Curls", "Brachialis & forearms (3x10-12)"],
     ],
   },
-  Friday: {
+  Wednesday: {
     title: "Legs & Abs – Quads, Hamstrings, Calves",
     exercises: [
       ["Barbell Back Squats", "Quads, glutes, and core (4x4-6)"],
@@ -70,7 +58,7 @@ const workoutPlan = {
       ["Cable Rope Crunches", "Upper & mid abs (3x12-15)"],
     ],
   },
-  Saturday: {
+  Thrusday: {
     title: "Shoulders & Arms",
     exercises: [
       ["Overhead Barbell Press", "Front delts & triceps (4x6-8)"],
@@ -83,7 +71,7 @@ const workoutPlan = {
       ["Triceps Pushdowns", "Triceps (3x12-15)"],
     ],
   },
-  Sunday: {
+  Friday: {
     title: "Chest & Back (Compound Focus)",
     exercises: [
       ["Incline Barbell Bench Press", "Upper chest (4x6-8)"],
@@ -95,6 +83,18 @@ const workoutPlan = {
       ["Face Pulls", "Rear delts and traps (3x12-15)"],
       ["Barbell Shrugs", "Upper traps (3x12-15)"],
       ["Hyperextensions", "Lower back, glutes, and hamstrings (3x8-10)"],
+    ],
+  },
+  Saturday: {
+    title: "Legs & Abs – Quads, Hamstrings, Calves",
+    exercises: [
+      ["Barbell Squats", "Quads focus (4x6-8)"],
+      ["Seated Leg Curls", "Hamstrings isolation (3x12-15)"],
+      ["Bulgarian Split Squats", "Glutes, quads, hamstrings (3x10-12 per leg)"],
+      ["Leg Extensions", "Quads isolation (3x12-15)"],
+      ["Seated Calf Raises", "Soleus (4x15-20)"],
+      ["Cable Side Crunches", "Obliques (3x12-15 per side)"],
+      ["Ab Rollouts (Ab Wheel)", "Core (3x10-12)"],
     ],
   },
 };
