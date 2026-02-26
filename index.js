@@ -58,7 +58,7 @@ const workoutPlan = {
       ["Cable Rope Crunches", "Upper & mid abs (3x12-15)"],
     ],
   },
-  Thrusday: {
+  Thursday: {
     title: "Shoulders & Arms",
     exercises: [
       ["Overhead Barbell Press", "Front delts & triceps (4x6-8)"],
