@@ -118,11 +118,14 @@ const sendWorkoutMessage = async () => {
       timeZone: "Asia/Kolkata",
     })}] ⏱️ Cron is running...`
   );
+
   const today = new Date().toLocaleDateString("en-US", {
     weekday: "long",
     timeZone: "Asia/Kolkata",
   });
+
   const plan = workoutPlan[today];
+
   if (!plan) {
     console.log("❌ No plan found for today.");
     return;
@@ -130,36 +133,29 @@ const sendWorkoutMessage = async () => {
 
   let message = `📅 *${today} - ${plan.title}*\n\n`;
 
+  // ✅ REST DAY
   if (plan.exercises.length === 0) {
-    message +=
-     "🛌 Rest & Reset.\n\nRecover hard today so you can train harder tomorrow. 💪";
+    message += "🛌 Rest & Reset.\n\nRecover hard today so you can train harder tomorrow. 💪";
+    message += "\n\n🎯 Consistency builds strength.\n💪 Show up.";
     await sendMessage(message);
     return;
   }
 
+  // ✅ WORKOUT DAY
   const icons = ["🏋️", "🔥", "💪", "🦾", "🏆", "🥇", "🚀", "🛡️", "⚡", "✅"];
+
   message += "✅ *Today's Workout:*\n\n";
+
   plan.exercises.forEach((ex, i) => {
     const icon = icons[i % icons.length];
-    let message = `📅 *${today} - ${plan.title}*\n\n`;
 
-  if (plan.exercises.length === 0) {
-    message +=
-      "🛌 It's your fasting day! Take rest and focus on recovery and hydration. 💧🧘‍♂️";
-    await sendMessage(message);
-    return;
-  }
-
-  const icons = ["🏋️", "🔥", "💪", "🦾", "🏆", "🥇", "🚀", "🛡️", "⚡", "✅"];
-  message += "✅ *Today's Workout:*\n\n";
-  plan.exercises.forEach((ex, i) => {
-    const icon = icons[i % icons.length];
-message += `${icon}  *${ex.name}*  \n`;
-message += `   🎯 _${ex.target}_\n`;
-message += `   📊 ${ex.sets}\n\n`;
+    message += `${icon}  *${ex.name}*\n`;
+    message += `   🎯 _${ex.target}_\n`;
+    message += `   📊 ${ex.sets}\n\n`;
   });
 
-  message += "🎯Stay consistent 💪. Let’s crush today!";
+  message += "🎯 Consistency builds strength.\n💪 Show up.";
+
   await sendMessage(message);
 };
 
