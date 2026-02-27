@@ -149,7 +149,7 @@ const sendWorkoutMessage = async () => {
   plan.exercises.forEach((ex, i) => {
     const icon = icons[i % icons.length];
 
-   message += `${icon} *${ex.name}*  |  📊 ${ex.sets}\n   🎯 ${ex.target}\n\n`;
+   message += `${icon} *${ex.name}*  ➜  ${ex.sets}\n   🎯 ${ex.target}\n\n`;
   });
 
   message += "🎯 Consistency builds strength.\n💪 Show up.";
