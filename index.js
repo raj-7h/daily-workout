@@ -177,22 +177,5 @@ sendWorkoutMessage().catch(console.error);
 
   });
 
- message += "\n🎯 Consistency builds strength.\n💪 Show up.";
-  await sendMessage(message);
-};
-
-const sendMessage = async (msg) => {
-  console.log("📤 Final message:\n", msg);
-  try {
-    const res = await client.messages.create({
-      from: process.env.FROM_NUMBER,
-      to: process.env.TO_NUMBER,
-      body: msg,
-    });
-    console.log("✅ Message sent:", res.sid);
-  } catch (err) {
-    console.error("❌ Error sending message:", err);
-  }
-};
 
 sendWorkoutMessage().catch(console.error);
