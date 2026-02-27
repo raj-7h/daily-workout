@@ -175,7 +175,3 @@ const sendMessage = async (msg) => {
 
 sendWorkoutMessage().catch(console.error);
 
-  });
-
-
-sendWorkoutMessage().catch(console.error);
