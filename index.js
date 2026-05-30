@@ -204,11 +204,9 @@ const sendWorkoutMessage = async () => {
   }
 
 let message = `
-
 🏋️ ${today} • ${plan.title}
 
 🎯 ${plan.focus}
-
 `;
 
   // Recovery Day
