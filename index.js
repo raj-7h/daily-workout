@@ -191,16 +191,14 @@ console.log("Hello");
 };
 
 const sendWorkoutMessage = async () => {
-  console.log(
-    `[${new Date().toLocaleString("en-IN", {
-      timeZone: "Asia/Kolkata",
-    })}] ⏱️ Cron is running...`
-  );
+console.log(
+[${new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata", })}] ⏱️ Cron is running...
+);
 
-  const today = new Date().toLocaleDateString("en-US", {
-    weekday: "long",
-    timeZone: "Asia/Kolkata",
-  });
+const today = new Date().toLocaleDateString(“en-US”, {
+weekday: “long”,
+timeZone: “Asia/Kolkata”,
+});
 
   const plan = workoutPlan[today];
 
@@ -209,29 +207,64 @@ const sendWorkoutMessage = async () => {
     return;
   }
 
-  let message = `📅 *${today} - ${plan.title}*\n\n`;
+ let message = `
+📅 ${today}
+
+🔥 ${plan.title}
+
+🎯 Focus: ${plan.focus}
+⚡ Vibe: ${plan.vibe}
+
+`;
 
   // ✅ REST DAY
-  if (plan.exercises.length === 0) {
-    message += "🛌 Rest & Reset.\n\nRecover hard today so you can train harder tomorrow. 💪";
-    message += "\n\n🎯 Consistency builds strength.\n💪 Show up.";
+if (plan.exercises.length === 0) {
+message += `
+━━━━━━━━━━━━━━━━━━━━
+
+🛌 RECOVERY DAY
+
+• Hydrate well
+• Stretch & recover
+• Get quality sleep
+• Prepare for next week
+
+━━━━━━━━━━━━━━━━━━━━
+
+💪 Recovery is where growth happens.
+`;
     await sendMessage(message);
     return;
   }
 
   // ✅ WORKOUT DAY
-  const icons = ["🏋️", "🔥", "💪", "🦾", "🏆", "🥇", "🚀", "🛡️", "⚡", "✅"];
 
-  message += "✅ *Today's Workout:*\n\n";
+plan.exercises.forEach((ex) => {
+if (ex.heading) {
+message += `
+━━━━━━━━━━━━━━━━━━━━
+${ex.heading}
+━━━━━━━━━━━━━━━━━━━━
 
-  plan.exercises.forEach((ex, i) => {
-    const icon = icons[i % icons.length];
+`;
+return;
+}
+message += `• ${ex.name}\n`;
 
-   message += `${icon} *${ex.name}*  ➜  ${ex.sets}\n   🎯 ${ex.target}\n\n`;
+message += `  Sets: ${ex.sets}\n`;
+
+message += `  Target: ${ex.target}\n\n`;
   });
 
-  message += "🎯 Consistency builds strength.\n💪 Show up.";
+message += `
+━━━━━━━━━━━━━━━━━━━━
 
+🎯 Focus on form
+📈 Progressive overload
+💪 Train hard. Recover harder.
+
+━━━━━━━━━━━━━━━━━━━━
+`;
   await sendMessage(message);
 };
 
