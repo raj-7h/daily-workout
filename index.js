@@ -232,11 +232,11 @@ const sendWorkoutMessage = async () => {
   // Workout Day
   plan.exercises.forEach((ex) => {
     if (ex.heading) {
-      message += `\n${ex.heading}\n`;
+      message += `\n*${ex.heading}*\n`;
       return;
     }
 
-    message += `• ${ex.name}\n`;
+    message += `• _${ex.name}_\n`;
   });
 
   message += `\n💪 Let's go!`;
