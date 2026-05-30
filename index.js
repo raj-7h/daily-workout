@@ -9,106 +9,184 @@ const TO_NUMBER = process.env.TO_NUMBER;
 const client = twilio(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN);
 console.log("Hello");
 
-const workoutPlan = {
- Sunday: {
-    title: "Recovery Day 😴",
-  focus: "Full Rest & Muscle Repair",
-  note: "Hydrate. Stretch. Reset.",
-  exercises: [],
-  },
+
+  const workoutPlan = {
   Monday: {
     title: "Push Day 🔥",
-  focus: "Chest • Shoulders • Triceps",
-  vibe: "Strength & Size",
-  exercises: [
-    { name: "Flat Barbell Bench Press", sets: "4x4-6", target: "Mid Chest" },
-    { name: "Incline Dumbbell Press", sets: "3x8-10", target: "Upper Chest" },
-    { name: "Dumbbell Shoulder Press", sets: "4x8-10", target: "Front Delts" },
-    { name: "Cable Lateral Raises", sets: "3x12-15", target: "Side Delts" },
-    { name: "Overhead DB Extension", sets: "3x10-12", target: "Long Head Triceps" },
-    { name: "Rope Pushdowns", sets: "3x10-12", target: "Triceps" },
-  ],
+    focus: "Chest • Shoulders • Triceps",
+    vibe: "Strength & Size",
+
+    exercises: [
+      // CHEST
+      { heading: "CHEST 🏋️" },
+      { name: "Flat Barbell Bench Press", sets: "4x4-6", target: "Mid Chest" },
+      { name: "Incline Dumbbell Press", sets: "3x8-10", target: "Upper Chest" },
+      { name: "Cable Fly / Pec Deck Fly", sets: "3x12-15", target: "Chest Stretch & Contraction" },
+
+      // SHOULDERS
+      { heading: "SHOULDERS 🎯" },
+      { name: "Dumbbell Shoulder Press", sets: "3x8-10", target: "Front Delts" },
+      { name: "Cable Lateral Raise", sets: "3x12-15", target: "Side Delts" },
+
+      // TRICEPS
+      { heading: "TRICEPS 💪" },
+      { name: "Overhead Dumbbell Extension", sets: "3x10-12", target: "Long Head Triceps" },
+      { name: "Rope Pushdown", sets: "3x10-12", target: "Triceps" },
+    ],
   },
+
   Tuesday: {
     title: "Pull Day 🔥",
-  focus: "Back • Traps • Biceps",
-  vibe: "Strength & Thickness",
-  exercises: [
-    { name: "Deadlifts", target: "Lower Back • Glutes • Traps", sets: "4x4-6" },
-    { name: "Pull-Ups / Lat Pulldown", target: "Lats • Traps", sets: "4x8-10" },
-    { name: "Barbell Rows", target: "Mid Back • Rear Delts", sets: "4x6-8" },
-    { name: "Straight-Arm Pulldown", target: "Lats Isolation", sets: "3x12-15" },
-    { name: "Dumbbell Shrugs", target: "Upper Traps", sets: "3x12-15" },
-    { name: "Face Pulls", target: "Rear Delts • Traps", sets: "3x12-15" },
-    { name: "Zottman Curls", target: "Biceps • Forearms", sets: "3x10-12" },
-    { name: "Incline Dumbbell Bicep Curls", target: "Biceps Peak", sets: "3x10-12" },
-    { name: "Hammer Curls", target: "Brachialis • Forearms", sets: "3x10-12" },
-  ],
+    focus: "Back • Rear Delts • Biceps • Forearms",
+    vibe: "Strength & Thickness",
+
+    exercises: [
+      // BACK
+      { heading: "BACK 🦍" },
+      { name: "Deadlift", sets: "3x4-6", target: "Lower Back • Glutes • Traps" },
+      { name: "Pull-Ups / Lat Pulldown", sets: "4x8-10", target: "Lats • Upper Back" },
+      { name: "Barbell Row", sets: "4x6-8", target: "Mid Back Thickness" },
+      { name: "Straight-Arm Pulldown", sets: "3x12-15", target: "Lats Isolation" },
+
+      // REAR DELTS
+      { heading: "REAR DELTS 🎯" },
+      { name: "Face Pull", sets: "3x12-15", target: "Rear Delts • Upper Traps" },
+
+      // BICEPS
+      { heading: "BICEPS 💪" },
+      { name: "Incline Dumbbell Curl", sets: "3x10-12", target: "Biceps Long Head" },
+      { name: "Preacher Curl", sets: "3x10-12", target: "Biceps Short Head" },
+      { name: "Hammer Curl", sets: "3x10-12", target: "Brachialis • Forearms" },
+
+      // FOREARMS
+      { heading: "FOREARMS ✊" },
+      { name: "Reverse EZ Bar Curl", sets: "3x10-12", target: "Forearms • Brachioradialis" },
+      { name: "Wrist Curl", sets: "3x12-15", target: "Forearm Flexors" },
+    ],
   },
+
   Wednesday: {
-title: "Legs & Core 🔥",
-focus: "Lower Body • Abs",
-vibe: "Power & Control",
+    title: "Legs & Core 🔥",
+    focus: "Lower Body • Abs",
+    vibe: "Power & Control",
 
-exercises: [
-  { name: "Back Squat", target: "Quads • Glutes • Core", sets: "4x4-6" },
-  { name: "Bulgarian Split Squat", target: "Quads • Glutes • Hamstrings", sets: "3x10-12 / leg" },
-  { name: "Leg Press", target: "Quads • Glutes", sets: "3x12-15" },
-  { name: "Seated / Lying Leg Curl", target: "Hamstrings", sets: "3x10-12" },
-  { name: "Leg Extension", target: "Quads (Isolation)", sets: "3x12-15" },
-  { name: "Standing Calf Raise", target: "Calves (Gastrocnemius)", sets: "4x15-20" },
-  { name: "Hanging Leg Raise", target: "Lower Abs", sets: "3x12-15" },
-  { name: "Weighted Sit-Up", target: "Upper Abs", sets: "3x10-12" },
-  { name: "Cable Crunch", target: "Core (Abs)", sets: "3x12-15" },
-],
+    exercises: [
+      // QUADS
+      { heading: "QUADS 🦵" },
+      { name: "Back Squat", sets: "4x4-6", target: "Quads • Glutes • Core" },
+      { name: "Leg Press", sets: "3x10-12", target: "Quads • Glutes" },
+      { name: "Leg Extension", sets: "3x12-15", target: "Quads Isolation" },
+
+      // HAMSTRINGS
+      { heading: "HAMSTRINGS 🍗" },
+      { name: "Romanian Deadlift", sets: "4x6-8", target: "Hamstrings • Glutes" },
+      { name: "Seated / Lying Leg Curl", sets: "3x10-12", target: "Hamstrings" },
+
+      // CALVES
+      { heading: "CALVES 🐂" },
+      { name: "Standing Calf Raise", sets: "4x15-20", target: "Calves (Gastrocnemius)" },
+
+      // ABS
+      { heading: "ABS 🔥" },
+      { name: "Hanging Leg Raise", sets: "3x12-15", target: "Lower Abs" },
+      { name: "Cable Crunch", sets: "3x12-15", target: "Upper Abs" },
+      { name: "Ab Wheel Rollout", sets: "3x10-12", target: "Core Stability" },
+    ],
   },
+
   Thursday: {
-   title: "Shoulders & Arms 🔥",
-focus: "Delts • Arms",
-vibe: "Volume & Pump",
+    title: "Shoulders & Arms 🔥",
+    focus: "Delts • Arms • Forearms",
+    vibe: "Volume & Pump",
 
-exercises: [
-  { name: "Barbell Overhead Press", target: "Front Delts • Triceps", sets: "4x6-8" },
-  { name: "Reverse Pec Deck", target: "Rear Delts", sets: "3x12-15" },
-  { name: "Arnold Press", target: "Front • Side Delts", sets: "3x8-10" },
-  { name: "Lateral Raise", target: "Side Delts", sets: "3x12-15" },
-  { name: "Barbell Curl", target: "Biceps", sets: "3x8-10" },
-  { name: "Incline DB Curl", target: "Biceps (Peak)", sets: "3x10-12" },
-  { name: "Skull Crusher", target: "Triceps", sets: "3x8-10" },
-  { name: "Cable Pushdown", target: "Triceps", sets: "3x12-15" },
-],
+    exercises: [
+      // SHOULDERS
+      { heading: "SHOULDERS 🎯" },
+      { name: "Barbell Overhead Press", sets: "4x6-8", target: "Front Delts • Triceps" },
+      { name: "Lateral Raise", sets: "3x12-15", target: "Side Delts" },
+      { name: "Reverse Pec Deck", sets: "3x12-15", target: "Rear Delts" },
+
+      // BICEPS
+      { heading: "BICEPS 💪" },
+      { name: "Barbell Curl", sets: "3x8-10", target: "Biceps" },
+      { name: "Incline Dumbbell Curl", sets: "3x10-12", target: "Biceps Peak" },
+      { name: "Concentration Curl", sets: "2x12-15", target: "Peak Contraction" },
+
+      // TRICEPS
+      { heading: "TRICEPS 💥" },
+      { name: "Skull Crusher", sets: "3x8-10", target: "Triceps" },
+      { name: "Cable Pushdown", sets: "3x12-15", target: "Triceps" },
+
+      // FOREARMS
+      { heading: "FOREARMS ✊" },
+      { name: "Reverse Wrist Curl", sets: "3x12-15", target: "Forearm Extensors" },
+      { name: "Farmer's Walk", sets: "2 Rounds (30-40 sec)", target: "Grip • Forearms • Traps" },
+    ],
   },
+
   Friday: {
     title: "Chest & Back 🔥",
-focus: "Push • Pull Compounds",
-vibe: "Strength & Density",
+    focus: "Push • Pull Compounds • Abs",
+    vibe: "Strength & Density",
 
-exercises: [
-  { name: "Incline Barbell Press", target: "Upper Chest", sets: "4x6-8" },
-  { name: "Single-Arm Cable Pulldown", target: "Lats • Upper Back", sets: "4x8-10" },
-  { name: "Flat Dumbbell Press", target: "Mid Chest", sets: "3x8-10" },
-  { name: "Chest-Supported Row", target: "Mid Back • Traps", sets: "4x8-10" },
-  { name: "Seated Cable Row", target: "Mid Back", sets: "3x8-10" },
-  { name: "Decline Dumbbell Press", target: "Lower Chest", sets: "3x8-10" },
-  { name: "Face Pull", target: "Rear Delts • Traps", sets: "3x12-15" },
-  { name: "Barbell Shrug", target: "Upper Traps", sets: "3x12-15" },
-  { name: "Back Extension", target: "Lower Back • Glutes", sets: "3x8-10" },
-],
+    exercises: [
+      // CHEST
+      { heading: "CHEST 🏋️" },
+      { name: "Incline Barbell Press", sets: "4x6-8", target: "Upper Chest" },
+      { name: "Flat Dumbbell Press", sets: "3x8-10", target: "Mid Chest" },
+      { name: "Weighted Chest Dips / Decline DB Press", sets: "3x8-12", target: "Lower Chest" },
+      { name: "Pec Deck Fly / Cable Fly", sets: "3x12-15", target: "Chest Isolation" },
+
+      // BACK
+      { heading: "BACK 🦍" },
+      { name: "Single-Arm Cable Pulldown", sets: "4x8-10", target: "Lats • Upper Back" },
+      { name: "Chest-Supported Row", sets: "4x8-10", target: "Mid Back Thickness" },
+      { name: "Seated Cable Row", sets: "3x10-12", target: "Mid Back" },
+
+      // REAR DELTS
+      { heading: "REAR DELTS 🎯" },
+      { name: "Face Pull", sets: "3x12-15", target: "Rear Delts • Traps" },
+
+      // ABS
+      { heading: "ABS 🔥" },
+      { name: "Hanging Leg Raise", sets: "3x12-15", target: "Lower Abs" },
+      { name: "Cable Crunch", sets: "3x12-15", target: "Upper Abs" },
+    ],
   },
+
   Saturday: {
     title: "Leg Day 🔥",
-focus: "Lower Body • Core",
-vibe: "Volume & Stability",
+    focus: "Lower Body • Core",
+    vibe: "Volume & Stability",
 
-exercises: [
-  { name: "Back Squat", target: "Quads", sets: "4x6-8" },
-  { name: "Seated Leg Curl", target: "Hamstrings", sets: "3x12-15" },
-  { name: "Bulgarian Split Squat", target: "Glutes • Quads", sets: "3x10-12 / leg" },
-  { name: "Leg Extension", target: "Quads (Isolation)", sets: "3x12-15" },
-  { name: "Seated Calf Raise", target: "Soleus", sets: "4x15-20" },
-  { name: "Cable Side Crunch", target: "Obliques", sets: "3x12-15 / side" },
-  { name: "Ab Wheel Rollout", target: "Core", sets: "3x10-12" },
-],
+    exercises: [
+      // QUADS
+      { heading: "QUADS 🦵" },
+      { name: "Front Squat / Hack Squat", sets: "4x6-8", target: "Quads" },
+      { name: "Bulgarian Split Squat", sets: "3x10-12 / leg", target: "Glutes • Quads" },
+
+      // HAMSTRINGS
+      { heading: "HAMSTRINGS 🍗" },
+      { name: "Romanian Deadlift", sets: "3x8-10", target: "Hamstrings • Glutes" },
+      { name: "Leg Curl", sets: "3x12-15", target: "Hamstrings" },
+
+      // CALVES
+      { heading: "CALVES 🐂" },
+      { name: "Seated Calf Raise", sets: "4x15-20", target: "Soleus" },
+
+      // ABS
+      { heading: "ABS 🔥" },
+      { name: "Cable Side Crunch", sets: "3x12-15 / side", target: "Obliques" },
+      { name: "Hanging Leg Raise", sets: "3x12-15", target: "Lower Abs" },
+      { name: "Ab Wheel Rollout", sets: "3x10-12", target: "Core Stability" },
+    ],
+  },
+
+  Sunday: {
+    title: "Recovery Day 😴",
+    focus: "Full Rest & Recovery",
+    vibe: "Recover • Grow • Repeat",
+    exercises: [],
   },
 };
 
