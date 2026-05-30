@@ -191,23 +191,28 @@ console.log("Hello");
 };
 
 const sendWorkoutMessage = async () => {
-console.log(
+
+  console.log(
 [${new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata", })}] ⏱️ Cron is running...
-);
+)
 
-const today = new Date().toLocaleDateString(“en-US”, {
-weekday: “long”,
-timeZone: “Asia/Kolkata”,
-});
+}
+const today = new Date().toLocaleDateString("en-US", {
+  weekday: "long",
+  timeZone: "Asia/Kolkata",
+})
 
-  const plan = workoutPlan[today];
+}
+console.log("Today:", today)
 
-  if (!plan) {
-    console.log("❌ No plan found for today.");
-    return;
-  }
+const plan = workoutPlan[today];
 
- let message = `
+if (!plan) {
+console.log("❌ No plan found for today.");
+return;
+}
+
+let message = `
 📅 ${today}
 
 🔥 ${plan.title}
@@ -217,8 +222,8 @@ timeZone: “Asia/Kolkata”,
 
 `;
 
-  // ✅ REST DAY
-if (plan.exercises.length === 0) {
+// Recovery Day
+if (!plan.exercises || plan.exercises.length === 0) {
 message += `
 ━━━━━━━━━━━━━━━━━━━━
 
