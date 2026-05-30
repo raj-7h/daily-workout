@@ -191,17 +191,15 @@ console.log("Hello");
 };
 
 const sendWorkoutMessage = async () => {
-
-const today = new Date().toLocaleDateString("en-US", {
-  weekday: "long",
-  timeZone: "Asia/Kolkata",
-})
-
+const today = new Date().toLocaleDateString(“en-US”, {
+weekday: “long”,
+timeZone: “Asia/Kolkata”,
+});
 
 const plan = workoutPlan[today];
 
 if (!plan) {
-console.log("❌ No plan found for today.");
+console.log(“❌ No plan found for today.”);
 return;
 }
 
@@ -218,16 +216,11 @@ let message = `
 // Recovery Day
 if (!plan.exercises || plan.exercises.length === 0) {
 message += `
-━━━━━━━━━━━━━━━━━━━━
-
 🛌 RECOVERY DAY
 
 • Hydrate well
 • Stretch & recover
 • Get quality sleep
-• Prepare for next week
-
-━━━━━━━━━━━━━━━━━━━━
 
 💪 Recovery is where growth happens.
 `;
@@ -243,7 +236,7 @@ plan.exercises.forEach((ex) => {
     return;
   }
 
-  message += • ${ex.name}\n;
+  message += `• ${ex.name}\n`;
 });
 
 message += \n💪 Let's go!;
