@@ -18,18 +18,18 @@ console.log("Hello");
 
     exercises: [
       // CHEST
-      { heading: "CHEST 🏋️" },
+      { heading: "Chest 🏋️" },
       { name: "Flat Barbell Bench Press", sets: "4x4-6", target: "Mid Chest" },
       { name: "Incline Dumbbell Press", sets: "3x8-10", target: "Upper Chest" },
       { name: "Cable Fly / Pec Deck Fly", sets: "3x12-15", target: "Chest Stretch & Contraction" },
 
       // SHOULDERS
-      { heading: "SHOULDERS 🎯" },
+      { heading: "Shoulders 🎯" },
       { name: "Dumbbell Shoulder Press", sets: "3x8-10", target: "Front Delts" },
       { name: "Cable Lateral Raise", sets: "3x12-15", target: "Side Delts" },
 
       // TRICEPS
-      { heading: "TRICEPS 💪" },
+      { heading: "Triceps 💪" },
       { name: "Overhead Dumbbell Extension", sets: "3x10-12", target: "Long Head Triceps" },
       { name: "Rope Pushdown", sets: "3x10-12", target: "Triceps" },
     ],
@@ -42,24 +42,24 @@ console.log("Hello");
 
     exercises: [
       // BACK
-      { heading: "BACK 🦍" },
+      { heading: "Back 🦍" },
       { name: "Deadlift", sets: "3x4-6", target: "Lower Back • Glutes • Traps" },
       { name: "Pull-Ups / Lat Pulldown", sets: "4x8-10", target: "Lats • Upper Back" },
       { name: "Barbell Row", sets: "4x6-8", target: "Mid Back Thickness" },
       { name: "Straight-Arm Pulldown", sets: "3x12-15", target: "Lats Isolation" },
 
       // REAR DELTS
-      { heading: "REAR DELTS 🎯" },
+      { heading: "Rear Delts🎯" },
       { name: "Face Pull", sets: "3x12-15", target: "Rear Delts • Upper Traps" },
 
       // BICEPS
-      { heading: "BICEPS 💪" },
+      { heading: "Biceps 💪" },
       { name: "Incline Dumbbell Curl", sets: "3x10-12", target: "Biceps Long Head" },
       { name: "Preacher Curl", sets: "3x10-12", target: "Biceps Short Head" },
       { name: "Hammer Curl", sets: "3x10-12", target: "Brachialis • Forearms" },
 
       // FOREARMS
-      { heading: "FOREARMS ✊" },
+      { heading: "Forearms ✊" },
       { name: "Reverse EZ Bar Curl", sets: "3x10-12", target: "Forearms • Brachioradialis" },
       { name: "Wrist Curl", sets: "3x12-15", target: "Forearm Flexors" },
     ],
@@ -72,18 +72,18 @@ console.log("Hello");
 
     exercises: [
       // QUADS
-      { heading: "QUADS 🦵" },
+      { heading: "Quads 🦵" },
       { name: "Back Squat", sets: "4x4-6", target: "Quads • Glutes • Core" },
       { name: "Leg Press", sets: "3x10-12", target: "Quads • Glutes" },
       { name: "Leg Extension", sets: "3x12-15", target: "Quads Isolation" },
 
       // HAMSTRINGS
-      { heading: "HAMSTRINGS 🍗" },
+      { heading: "Hamstring" },
       { name: "Romanian Deadlift", sets: "4x6-8", target: "Hamstrings • Glutes" },
       { name: "Seated / Lying Leg Curl", sets: "3x10-12", target: "Hamstrings" },
 
       // CALVES
-      { heading: "CALVES 🐂" },
+      { heading: "Calves" },
       { name: "Standing Calf Raise", sets: "4x15-20", target: "Calves (Gastrocnemius)" },
 
       // ABS
@@ -101,24 +101,24 @@ console.log("Hello");
 
     exercises: [
       // SHOULDERS
-      { heading: "SHOULDERS 🎯" },
+      { heading: "Shoulders 🎯" },
       { name: "Barbell Overhead Press", sets: "4x6-8", target: "Front Delts • Triceps" },
       { name: "Lateral Raise", sets: "3x12-15", target: "Side Delts" },
       { name: "Reverse Pec Deck", sets: "3x12-15", target: "Rear Delts" },
 
       // BICEPS
-      { heading: "BICEPS 💪" },
+      { heading: "Biceps 💪" },
       { name: "Barbell Curl", sets: "3x8-10", target: "Biceps" },
       { name: "Incline Dumbbell Curl", sets: "3x10-12", target: "Biceps Peak" },
       { name: "Concentration Curl", sets: "2x12-15", target: "Peak Contraction" },
 
       // TRICEPS
-      { heading: "TRICEPS 💥" },
+      { heading: "Triceps 💥" },
       { name: "Skull Crusher", sets: "3x8-10", target: "Triceps" },
       { name: "Cable Pushdown", sets: "3x12-15", target: "Triceps" },
 
       // FOREARMS
-      { heading: "FOREARMS ✊" },
+      { heading: "Forearms ✊" },
       { name: "Reverse Wrist Curl", sets: "3x12-15", target: "Forearm Extensors" },
       { name: "Farmer's Walk", sets: "2 Rounds (30-40 sec)", target: "Grip • Forearms • Traps" },
     ],
@@ -131,20 +131,20 @@ console.log("Hello");
 
     exercises: [
       // CHEST
-      { heading: "CHEST 🏋️" },
+      { heading: "Chest 🏋️" },
       { name: "Incline Barbell Press", sets: "4x6-8", target: "Upper Chest" },
       { name: "Flat Dumbbell Press", sets: "3x8-10", target: "Mid Chest" },
       { name: "Weighted Chest Dips / Decline DB Press", sets: "3x8-12", target: "Lower Chest" },
       { name: "Pec Deck Fly / Cable Fly", sets: "3x12-15", target: "Chest Isolation" },
 
       // BACK
-      { heading: "BACK 🦍" },
+      { heading: "Back 🦍" },
       { name: "Single-Arm Cable Pulldown", sets: "4x8-10", target: "Lats • Upper Back" },
       { name: "Chest-Supported Row", sets: "4x8-10", target: "Mid Back Thickness" },
       { name: "Seated Cable Row", sets: "3x10-12", target: "Mid Back" },
 
       // REAR DELTS
-      { heading: "REAR DELTS 🎯" },
+      { heading: "Rear Delts 🎯" },
       { name: "Face Pull", sets: "3x12-15", target: "Rear Delts • Traps" },
 
       // ABS
@@ -161,17 +161,17 @@ console.log("Hello");
 
     exercises: [
       // QUADS
-      { heading: "QUADS 🦵" },
+      { heading: "Quads 🦵" },
       { name: "Front Squat / Hack Squat", sets: "4x6-8", target: "Quads" },
       { name: "Bulgarian Split Squat", sets: "3x10-12 / leg", target: "Glutes • Quads" },
 
       // HAMSTRINGS
-      { heading: "HAMSTRINGS 🍗" },
+      { heading: "Hamstrings 🍗" },
       { name: "Romanian Deadlift", sets: "3x8-10", target: "Hamstrings • Glutes" },
       { name: "Leg Curl", sets: "3x12-15", target: "Hamstrings" },
 
       // CALVES
-      { heading: "CALVES 🐂" },
+      { heading: "Calves" },
       { name: "Seated Calf Raise", sets: "4x15-20", target: "Soleus" },
 
       // ABS
