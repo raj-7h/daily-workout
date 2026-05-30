@@ -203,13 +203,11 @@ const sendWorkoutMessage = async () => {
     return;
   }
 
-  let message = `
-📅 ${today}
+let message = `
 
-🔥 ${plan.title}
+🏋️ ${today} • ${plan.title}
 
-🎯 Focus: ${plan.focus}
-⚡ Vibe: ${plan.vibe}
+🎯 ${plan.focus}
 
 `;
 
