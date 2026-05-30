@@ -238,31 +238,15 @@ message += `
   // ✅ WORKOUT DAY
 
 plan.exercises.forEach((ex) => {
-if (ex.heading) {
-message += `
-━━━━━━━━━━━━━━━━━━━━
-${ex.heading}
-━━━━━━━━━━━━━━━━━━━━
+  if (ex.heading) {
+    message += \n${ex.heading}\n;
+    return;
+  }
 
-`;
-return;
-}
-message += `• ${ex.name}\n`;
+  message += • ${ex.name}\n;
+});
 
-message += `  Sets: ${ex.sets}\n`;
-
-message += `  Target: ${ex.target}\n\n`;
-  });
-
-message += `
-━━━━━━━━━━━━━━━━━━━━
-
-🎯 Focus on form
-📈 Progressive overload
-💪 Train hard. Recover harder.
-
-━━━━━━━━━━━━━━━━━━━━
-`;
+message += \n💪 Let's go!;
   await sendMessage(message);
 };
 
