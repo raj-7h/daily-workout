@@ -192,18 +192,11 @@ console.log("Hello");
 
 const sendWorkoutMessage = async () => {
 
-  console.log(
-[${new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata", })}] ⏱️ Cron is running...
-)
-
-}
 const today = new Date().toLocaleDateString("en-US", {
   weekday: "long",
   timeZone: "Asia/Kolkata",
 })
 
-}
-console.log("Today:", today)
 
 const plan = workoutPlan[today];
 
