@@ -191,19 +191,19 @@ console.log("Hello");
 };
 
 const sendWorkoutMessage = async () => {
-const today = new Date().toLocaleDateString(“en-US”, {
-weekday: “long”,
-timeZone: “Asia/Kolkata”,
-});
+  const today = new Date().toLocaleDateString("en-US", {
+    weekday: "long",
+    timeZone: "Asia/Kolkata",
+  });
 
-const plan = workoutPlan[today];
+  const plan = workoutPlan[today];
 
-if (!plan) {
-console.log(“❌ No plan found for today.”);
-return;
-}
+  if (!plan) {
+    console.log("❌ No plan found for today.");
+    return;
+  }
 
-let message = `
+  let message = `
 📅 ${today}
 
 🔥 ${plan.title}
@@ -213,9 +213,9 @@ let message = `
 
 `;
 
-// Recovery Day
-if (!plan.exercises || plan.exercises.length === 0) {
-message += `
+  // Recovery Day
+  if (!plan.exercises || plan.exercises.length === 0) {
+    message += `
 🛌 RECOVERY DAY
 
 • Hydrate well
@@ -224,25 +224,25 @@ message += `
 
 💪 Recovery is where growth happens.
 `;
+
     await sendMessage(message);
     return;
   }
 
-  // ✅ WORKOUT DAY
+  // Workout Day
+  plan.exercises.forEach((ex) => {
+    if (ex.heading) {
+      message += `\n${ex.heading}\n`;
+      return;
+    }
 
-plan.exercises.forEach((ex) => {
-  if (ex.heading) {
-    message += \n${ex.heading}\n;
-    return;
-  }
+    message += `• ${ex.name}\n`;
+  });
 
-  message += `• ${ex.name}\n`;
-});
+  message += `\n💪 Let's go!`;
 
-message += \n💪 Let's go!;
   await sendMessage(message);
 };
-
 const sendMessage = async (msg) => {
   console.log("📤 Final message:\n", msg);
   try {
