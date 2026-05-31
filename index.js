@@ -30,8 +30,9 @@ console.log("Hello");
 
       // TRICEPS
       { heading: "Triceps 💪" },
-      { name: "Overhead Dumbbell Extension", sets: "3x10-12", target: "Long Head Triceps" },
       { name: "Rope Pushdown", sets: "3x10-12", target: "Triceps" },
+      { name: "Cross body tricep Extension", sets: "3x10-12", target: "Long Head Triceps" },
+      { name: "Weighted dips", sets: "3x10-12", target: "Long Head Triceps" },
     ],
   },
 
@@ -54,9 +55,9 @@ console.log("Hello");
 
       // BICEPS
       { heading: "Biceps 💪" },
-      { name: "Incline Dumbbell Curl", sets: "3x10-12", target: "Biceps Long Head" },
-      { name: "Preacher Curl", sets: "3x10-12", target: "Biceps Short Head" },
-      { name: "Hammer Curl", sets: "3x10-12", target: "Brachialis • Forearms" },
+      { name: "Spider Curl", sets: "3x10-12", target: "Biceps Long Head" },
+      { name: "Hammer Curl", sets: "3x10-12", target: "Biceps Short Head" },
+      { name: "Drag Curl", sets: "3x10-12", target: "Brachialis • Forearms" },
 
       // FOREARMS
       { heading: "Forearms ✊" },
@@ -90,7 +91,7 @@ console.log("Hello");
       { heading: "ABS 🔥" },
       { name: "Hanging Leg Raise", sets: "3x12-15", target: "Lower Abs" },
       { name: "Cable Crunch", sets: "3x12-15", target: "Upper Abs" },
-      { name: "Ab Wheel Rollout", sets: "3x10-12", target: "Core Stability" },
+      { name: "V ups", sets: "3x10-12", target: "Core Stability" },
     ],
   },
 
@@ -103,7 +104,7 @@ console.log("Hello");
       // SHOULDERS
       { heading: "Shoulders 🎯" },
       { name: "Barbell Overhead Press", sets: "4x6-8", target: "Front Delts • Triceps" },
-      { name: "Lateral Raise", sets: "3x12-15", target: "Side Delts" },
+      { name: "Lateral Raise (Bent over on bench 45°", sets: "3x12-15", target: "Side Delts" },
       { name: "Reverse Pec Deck", sets: "3x12-15", target: "Rear Delts" },
 
       // BICEPS
@@ -141,11 +142,11 @@ console.log("Hello");
       { heading: "Back 🦍" },
       { name: "Single-Arm Cable Pulldown", sets: "4x8-10", target: "Lats • Upper Back" },
       { name: "Chest-Supported Row", sets: "4x8-10", target: "Mid Back Thickness" },
-      { name: "Seated Cable Row", sets: "3x10-12", target: "Mid Back" },
+      { name: "Lower Back Extension", sets: "3x10-12", target: "Lower Back" },
 
-      // REAR DELTS
-      { heading: "Rear Delts 🎯" },
-      { name: "Face Pull", sets: "3x12-15", target: "Rear Delts • Traps" },
+      // TRAPS
+      { heading: "Traps 🎯" },
+      { name: "DB Srugs", sets: "3x12-15", target: "Traps" },
 
       // ABS
       { heading: "ABS 🔥" },
