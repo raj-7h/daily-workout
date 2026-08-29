@@ -156,23 +156,25 @@ let message = `
 🏋️ ${today} • ${plan.title}
 
 🎯 ${plan.focus}
+
+  ${plan.vibe}
 `;
 
   // Recovery Day
-  if (!plan.exercises || plan.exercises.length === 0) {
-    message += `
-🛌 RECOVERY DAY
+//   if (!plan.exercises || plan.exercises.length === 0) {
+//     message += `
+// 🛌 RECOVERY DAY
 
-• Hydrate well
-• Stretch & recover
-• Get quality sleep
+// • Hydrate well
+// • Stretch & recover
+// • Get quality sleep
 
-💪 Recovery is where growth happens.
-`;
+// 💪 Recovery is where growth happens.
+// `;
 
-    await sendMessage(message);
-    return;
-  }
+//     await sendMessage(message);
+//     return;
+//   }
 
   // Workout Day
   plan.exercises.forEach((ex) => {
